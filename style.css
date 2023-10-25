@@ -14,7 +14,91 @@ body {
 }
 
 .wrapper {
-    width: 600px;
-    background-color: #fff;
-    box-shadow: 0 0 10px #000;
+    width: 1000px;
+    height: 600px;
+}
+
+.info {
+    text-align: center;
+    font-size: 30px;
+}
+
+.info h1 {
+    margin-bottom: 10px;
+    font-size: 60px;
+}
+
+.ball-img {
+    position: relative;
+    height: 250px;
+    text-align: center;
+}
+
+.ball-img img {
+    position: absolute;
+    top: 30px;
+    left: calc(50% - 150px);
+    width: 300px;
+    cursor: pointer;
+}
+
+.question-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+.question-area h2 {
+    margin-bottom: 10px;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.question-area input {
+    padding: 10px 20px;
+    width: 80%;
+    font-size: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+.question-area .answer {
+    margin-top: 30px;
+}
+
+.question-area .answer span {
+    font-weight: bold;
+}
+
+.question-area .error {
+    font-weight: bold;
+    color: #3add8c;
+}
+
+.shake-animation {
+    animation: shake 1s 1;
+}
+
+@keyframes shake {
+    0% {
+        left: calc(50% - 150px);
+    }
+
+    20% {
+        left: calc(50% - 130px);
+    }
+
+    40% {
+        left: calc(50% - 150px);
+    }
+
+    60% {
+        left: calc(50% - 170px);
+    }
+
+    100% {
+        left: calc(50% - 150px);
+    }
 }
