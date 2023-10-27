@@ -5,10 +5,27 @@ const error = document.querySelector('.error');
 
 const answersArr = ['Yes', 'No', 'Maybe', 'It is hard to tell', 'You dont want to know'];
 
-const generateAnswer = () => {
-    const number = Math.floor(Math.random() * 5);
+const checkInput = () => {
 
-    answer.innerHTML = '<span>Odpowiedź:</span> ' + answersArr[number];
+    if (input.value !== '' && input.value.slice(-1) === '?') {
+        generateAnswer();
+        error.textContent = '';
+    } else if (input.value !== '' && input.value.slice(-1) !== '?') {
+        error.textContent = 'Question must end with "?"';
+        answer.textContent = '';
+    } else {
+        error.textContent = 'You have to as a question!';
+        answer.textContent = '';
+    }
+
 }
 
-ball.addEventListener('click', generateAnswer);
+const generateAnswer = () => {
+
+    const number = Math.floor(Math.random() * 5);
+
+    answer.innerHTML = '<span>Answer:</span> ' + answersArr[number];
+
+}
+
+ball.addEventListener('click', checkInput);
